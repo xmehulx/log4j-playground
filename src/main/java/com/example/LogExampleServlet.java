@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/logExample")
 public class LogExampleServlet extends HttpServlet {
     private static final Logger logger = LogManager.getLogger(LogExampleServlet.class);
 
