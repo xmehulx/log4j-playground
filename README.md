@@ -16,7 +16,8 @@ All the files for the Ubuntu-server is in the `mywebapp` folder, and the files r
 ## Vulnerable Ubuntu Server
 
 1) To set-up the server, download Apache Tomcat and set it up in a system folder (ideally). I saved mine as `/opt/apache-tomcat`
-2) Then go into the webapp folder and compile our simple web application using the following command
+2) Download and set-up [Java SE 7](https://www.oracle.com/ca-en/java/technologies/javase/javase7-archive-downloads.html) for the whole system.
+3) Then go into the webapp folder and compile our simple web application using the following command. You can use the log4j modules I provided as-is, or go ahead and download from [official Apache archive](https://archive.apache.org/dist/logging/log4j/2.12.0/ "Index of /dist/logging/log4j/2.12.0") and follow further steps
 ```shell
 javac -cp ".:WEB-INF/lib/*" -d WEB-INF/classes/ src/main/java/com/example/LogExampleServlet.java  -nowarn
 ```
